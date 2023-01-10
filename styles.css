@@ -1,25 +1,52 @@
 body {
     background-color: green;
+    /* background-image: url("https://claudiadiaz7.files.wordpress.com/2014/10/9-mc-card-suits-2.gif"); */
+    background-size: 80px 80px;
+
 }
+   /* h2 {
+    color: silver;
+   } */
+
 
 main p {
+    
     font-size:x-large;
     font-style: italic;
     color: gold;
+    
+}
+
+form input {
+    display: grid;
+    height: 140px;
+    width: 80px
 }
 
 section.rules h3{
     font-size: 30px;
+    text-decoration: solid underline;
+    font-weight: bold;
+    color: yellow
+
+    
+
 }
 
 section.points h3 {
+
     font-size: 30px;
+    color:yellow;
 }
 
 section.rules li {
     font-size: larger;
+    font-weight: bold;
+    color: gold
 }
 
 section.points li {
     font-size: larger;
+    font-weight: bold;
+    color:gold
 }
