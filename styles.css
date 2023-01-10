@@ -1,0 +1,25 @@
+body {
+    background-color: green;
+}
+
+main p {
+    font-size:x-large;
+    font-style: italic;
+    color: gold;
+}
+
+section.rules h3{
+    font-size: 30px;
+}
+
+section.points h3 {
+    font-size: 30px;
+}
+
+section.rules li {
+    font-size: larger;
+}
+
+section.points li {
+    font-size: larger;
+}
