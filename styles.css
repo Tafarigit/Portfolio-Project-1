@@ -27,7 +27,8 @@ section.rules h3{
     font-size: 30px;
     text-decoration: solid underline;
     font-weight: bold;
-    color: yellow
+    color: yellow;
+  
 
     
 
@@ -42,11 +43,25 @@ section.points h3 {
 section.rules li {
     font-size: larger;
     font-weight: bold;
-    color: gold
+    color: gold;
+    transition-property: font-size;
+    transition-duration: 4s;
+    transition-delay: 2s;
 }
 
 section.points li {
     font-size: larger;
     font-weight: bold;
-    color:gold
+    color:gold;
+    transition-property: font-size;
+    transition-duration: 4s;
+    transition-delay: 2s;
+}
+
+section.rules:hover {
+    font-size: 110%;
+}
+
+section.points:hover {
+    font-size: 110%;
 }
