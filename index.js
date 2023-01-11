@@ -1,34 +1,94 @@
-const BASE_URL = "https://deckofcardsapi.com/api/deck/new/shuffle/deck_count=1";
+
+
+const BASE_URL = "https://deckofcardsapi.com/api/deck/zqnjxw7xktei/draw/?count=1";
 console.log(BASE_URL)
-fetch(BASE_URL)
-  .then((response) => response.json())
-  .then((deck) => {
-     const mainDeck = document.querySelector("form")
-     const card = mainDeck.value;
+const form = document.querySelector("form")
+const inputName = document.querySelector("input.usersName")
+const btn = document.querySelector("#buttonClick")
+console.log()
+const image = document.querySelector("#cardImage")
 
-     const textInput = document.querySelector("input.usersCard")
-     const cardDrawn = deck[0].cards[0].value[0].suit[0];
-     const cardShown = document.createElement("p")
-     p.innerText = (`Card is ${deck.cards.value} of ${deck.cards.suit}`);
-     form.append(p.innerText)
+btn.addEventListener("click", onclick => {
 
-     
+    onclick.preventDefault()
 
-    // console.log(deck)
-    // const mainDeck = document.querySelector("main")
+    fetch(BASE_URL)
+    .then((response) => response.json())
+    .then((deck) => {
+       image.src = deck.cards[0].image
+       console.log(image)
+      
 
-    // const cardsRemaining = deck.remaining
-    // const remainingCards = document.createElement("p")
-    // p.innertext = `Total Cards: ${cardsRemaining}`
-    // mainDeck.append(remainingCards)
-    // console.log(mainDeck)
-    // const freshDeck = deck.deck_id
-    // freshDeck.setAttribute("class", "new deck");
-    // freshDeck.innerText("https://m.media-amazon.com/images71eoHO0JhUL._AC_SL1500_.jpg");
-    // console.log(freshDeck);
 
-  })
-  .catch((error) => {
-    // You can do what you like with the error here.
-    console.log(error);
-  });
+    shuffle(deck)
+    reshuffle()
+     form.reset()
+    })
+    .catch((error) => {
+
+      console.log(error);
+    });
+
+
+
+})
+function shuffle(deck) {
+    const isShuffled = document.createElement("p")
+  
+    // console.log(isShuffled)       
+     if (deck.shuffled === true){
+     isShuffled.innerText = "Deck has been shuffled"
+    }if (deck.remaining === 0) {
+        isShuffled.innerText = "Would you like to shuffle the deck"
+        reshuffle()
+    }
+    form.append(isShuffled)
+ 
+}
+
+// function drawCard(deck) {
+//     const cardDrawn = document.createElement("p")
+//     cardDrawn.innerText = image.src
+//     for (let el of deck) {
+//     if (deck.remaining > 1) {
+
+
+//     } 
+//     }
+// }
+
+   function reshuffle(deck) {
+    // console.log(deck.cards)
+    for (card of cards) {
+        // console.log(deck.cards[3].image)
+        if (indexOf(deck.card) === deck.cards.length -1)
+    
+        fetch("https://deckofcardsapi.com/api/deck/zqnjxw7xktei/shuffle/").then(response => {
+            return response.json()
+         
+        })
+        .catch(error => {
+        console.log(error)
+        })
+    }
+
+   }
+  
+
+// function cardPile () {
+//     if (cardDrawn) 
+// }
+
+
+//    console.log(deck)
+    //    console.log(deck.cards[0].image)
+    //    const mainDeck = document.querySelector("form")
+    //    const card = mainDeck.value;
+  
+    //    const textInput = document.querySelector("input.usersCard")
+    //    const cardDrawn = deck[0].cards[0].value[0].suit[0];
+    //    const cardShown = document.createElement("p")
+    //    p.innerText = (`Card is ${deck.cards.value} of ${deck.cards.suit}`);
+
+    
+    //    form.append(p.innerText)
