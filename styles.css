@@ -9,8 +9,15 @@ body {
    } */
 
 
-main p {
+main p.greeting {
     
+    font-size:x-large;
+    font-style: italic;
+    color: gold;
+    
+}
+
+p.cards {
     font-size:x-large;
     font-style: italic;
     color: gold;
@@ -40,6 +47,12 @@ section.points h3 {
     color:yellow;
 }
 
+section.rules img {
+    transition-property: inherit;
+    transition-duration: 4s;
+    transition-delay: 2s;
+
+}
 section.rules li {
     font-size: larger;
     font-weight: bold;
@@ -58,10 +71,22 @@ section.points li {
     transition-delay: 2s;
 }
 
-section.rules:hover {
-    font-size: 110%;
+section.rules:hover li:hover {
+    font-size: 150%;
+    
 }
 
-section.points:hover {
+section.points:hover li:hover {
     font-size: 110%;
+    
 }
+
+.fadeIn {
+    animation: fadeIn 12s;
+}
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;};
+
+}
+
