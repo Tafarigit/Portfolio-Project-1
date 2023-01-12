@@ -17,11 +17,23 @@ main p.greeting {
     
 }
 
+label {
+    font-size: 25px;
+}
+
+p.userSearch {
+    font-size: 25px;
+}
+
 p.cards {
     font-size:x-large;
     font-style: italic;
     color: gold;
     
+}
+
+p.pickedCards {
+    font-size: 25px;
 }
 
 form input {

@@ -1,21 +1,24 @@
 const BASE_URL = "https://deckofcardsapi.com/api/deck/zqnjxw7xktei/shuffle";
 let cardPicked = document.createElement("p")
     cardPicked.setAttribute("class", "pickedCards")
+    let deckShuffleCheck = document.createElement("p")
+    deckShuffleCheck.setAttribute("class", "userSearch")
 // const cardDrawn = document.CreateElement("p")
 // cardDrawn.setAttributes("class", "pickedCards")
 
 fetch(BASE_URL)
 .then((response) => response.json())
 .then((deck) => {
-    const deckShuffleCheck = document.createElement("p")
-    deckShuffleCheck.setAttribute("class", "userSearch")
+    // const deckShuffleCheck = document.createElement("p")
+    // deckShuffleCheck.setAttribute("class", "userSearch")
     
  if (deck.shuffled === true) {
-   deckShuffleCheck.innerText += "Deck is Shuffled!"
- }if(deck.shuffled === false) {
-   deckShuffleCheck.innerText += "Refresh the page to play again!"
-   console.log(deckShuffleCheck.innerText)
+   deckShuffleCheck.innerText = "Deck is Shuffled!"
  }
+//  if(deck.shuffled === false) {
+//    deckShuffleCheck.innerText = ""
+// //    console.log(deckShuffleCheck.innerText)
+//  }
 form.append(deckShuffleCheck)
 // console.log("Deck is shuffled");
 // console.log(deck.shuffled)
@@ -65,7 +68,7 @@ btn.addEventListener("click", onclick => {
     //    console.log(`deck.${code} = ${deck[code]}`)
     //     }
     //    console.log(image.src)
-    cardDrawn(deck)
+    cardDrawn(deck, deckShuffleCheck)
     shuffle(deck)
     form.append(image)
     // form.append(drawnCard)
@@ -94,7 +97,7 @@ function shuffle(deck) {
         fetch(BASE_URL)
         .then((response) => response.json())
         .then((deck) => {
-            console.log("Reshuffled")
+            deckShuffleCheck.innerText = "Reshuffled"
  
     })
     // form.append(isShuffled)
@@ -102,11 +105,13 @@ function shuffle(deck) {
 
         console.log(error);
       });
+} else {
+    deckShuffleCheck.innerText =""
 }
 
 }
 
-function cardDrawn(deck) {
+function cardDrawn(deck, deckShuffleCheck) {
 
          
  
@@ -117,17 +122,16 @@ if (!cards) {
 
 else {
     cardPicked.innerText = `Your card is ${deck.cards[0].value} of ${deck.cards[0].suit}`
+    deckShuffleCheck = ""
 }
 }
 
  
     }
+
+
 // function drawCard(deck) {
 //     const cardDrawn = document.createElement("p")
-//     cardDrawn.innerText = image.src
-//     for (let el of deck) {
-//     if (deck.remaining > 1) {
-
 
 //     } 
 //     }
