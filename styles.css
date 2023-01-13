@@ -42,6 +42,10 @@ p.pickedCards {
     font-size: 25px;
 }
 
+p.pointCards {
+    font-size: 25px;
+}
+
 form input {
     display: grid;
     height: 20px;

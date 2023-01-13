@@ -3,12 +3,15 @@ let cardPicked = document.createElement("p")
     cardPicked.setAttribute("class", "pickedCards")
     let deckShuffleCheck = document.createElement("p")
     deckShuffleCheck.setAttribute("class", "userSearch")
+    const cardPointValue = document.createElement("p")
+    cardPointValue.setAttribute("class", "pointCards")
 // const cardDrawn = document.CreateElement("p")
 // cardDrawn.setAttributes("class", "pickedCards")
 
 fetch(BASE_URL)
 .then((response) => response.json())
 .then((deck) => {
+
     // const deckShuffleCheck = document.createElement("p")
     // deckShuffleCheck.setAttribute("class", "userSearch")
     
@@ -35,7 +38,8 @@ console.log(BASE_URL)
 const form = document.querySelector("form")
 const inputName = document.querySelector("input.userSearch")
 const btn = document.querySelector("#buttonClick")
-console.log()
+// const points = document.querySelector("p.pointCards")
+// console.log()
 const image = document.querySelector("#cardImage")
 const cards = document.createElement("p")
 // cards.setAttribute("class", "drawnCards")
@@ -47,6 +51,9 @@ btn.addEventListener("click", onclick => {
     .then((response) => response.json())
     .then((deck) => {
     
+        // const cardPointValue = document.createElement("p")
+        // cardPointValue.setAttribute("class", "pointCards")
+        // cardPointValue.innerText = `Point total is ${deck.cards.value}`
        
        
         // console.log(deck.cards.length)
@@ -67,12 +74,14 @@ btn.addEventListener("click", onclick => {
     //    for (let code in deck) {
     //    console.log(`deck.${code} = ${deck[code]}`)
     //     }
-    //    console.log(image.src)
     cardDrawn(deck, deckShuffleCheck)
+    cardPoints(deck)
     shuffle(deck)
     form.append(image)
+    form.append(cardPointValue)
     // form.append(drawnCard)
     form.append(cardPicked)
+   
     // cardDrawn(deck)
     // drawCard(deck)
     // shuffle(deck)
@@ -90,6 +99,12 @@ btn.addEventListener("click", onclick => {
 
 
 })
+
+//shuffle() function keeps makes an api request that delivers a deck that is shuffled when there are no remaining cards left in the deck.
+// Then via text on the screen alerts the user that the deck has been Reshuffled! Since once the user goes on the page
+// There is a text prompt that alerts the user the deck has been shuffled which comes from an api request made at the loading of page.
+
+
 function shuffle(deck) {
     // const isShuffled = document.createElement("p")
     
@@ -100,7 +115,6 @@ function shuffle(deck) {
             deckShuffleCheck.innerText = "Reshuffled"
  
     })
-    // form.append(isShuffled)
     .catch((error) => {
 
         console.log(error);
@@ -108,13 +122,13 @@ function shuffle(deck) {
 } else {
     deckShuffleCheck.innerText =""
 }
-
 }
+
+//cardDrawn() function alerts yhe user via text what card has 
+//been drawn with the number value and the suit of the card.
 
 function cardDrawn(deck, deckShuffleCheck) {
 
-         
- 
 for (let cards in deck) {
 if (!cards) {
     cardPicked.innerText = ''
@@ -123,13 +137,46 @@ if (!cards) {
 else {
     cardPicked.innerText = `Your card is ${deck.cards[0].value} of ${deck.cards[0].suit}`
     deckShuffleCheck = ""
+    console.log(cardPicked.innerText)
 }
 }
 
- 
+  }
+
+//cardPoints() function produces the number value of all cards drawn, including face cards. 
+//Face cards are given a 10 point value.
+
+
+    function cardPoints(deck) {
+
+        const pointsFaceCards = 10
+        const cardValuePoints = ""
+       
+        deck.cards[0].pointsFaceCards = 10
+        deck.cards[0].cardValuePoints = deck.cards[0].value
+        console.log(Number(`${deck.cards[0].value}`))
+        for (let cardValue in deck) {
+            if (!cardValue) {
+                cardPointValue.innerText = ''
+            }
+            
+            if (deck.cards[0].value === "JACK" || deck.cards[0].value === "QUEEN" || deck.cards[0].value === "KING" || deck.cards[0].value === "ACE") {
+                deck.cards[0].pointsFaceCards
+                cardPointValue.innerText =  ` Your point total is ${deck.cards[0].pointsFaceCards}`
+                // deckShuffleCheck = ""
+                
+            }               
+            else {
+                deck.cards[0].value = deck.cards.cardValuePoints
+                cardPointValue.innerText =  ` Your point total is ${deck.cards[0].cardValuePoints}`
+            }
+    }
+   
     }
 
 
+
+    
 // function drawCard(deck) {
 //     const cardDrawn = document.createElement("p")
 
