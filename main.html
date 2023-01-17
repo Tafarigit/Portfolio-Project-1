@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="main.js" defer></script>
-        <link rel="stylesheet" href="main.css">
+        <script src="index.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <p>Put your name here please!</p>
-            <form onsubmit="myFunc()">
-                <p class="name">Enter nameIn the box below:</p>
-                <input type="text" id="usersName" required>
+        <p class="greeting">Thanks for stopping by....</p>
+        <form>
+            <div class="container">
+                <p class="name">Enter Your Name In The Box Below:</p>
+                <input type="text" required >
+                <span id="error"></span>
                 <br>
-                <input type="submit">
+                <input class="user" type="submit">
                 <br>
                 <br>
-                <label for="submit">Submit your comments here:</label>
-                <div class="fadeIn">
-                <img src="https://www.clipartmax.com/png/small/38-381949_finger-pointing-down-gif.png" alt="Finger Pointing Down Gif @clipartmax.com" width="40" height="40" style="align-content: center"> 
-                </div>
-                <br>
-                
-                <input type="Comment">
-                <!-- <button id="submit"></button> -->
-                <br>
-                <input type="submit">
-                
-            </form>
-            <script>
-                function myFunc() {
-                    alert("The form was submitted")
-                }
-            </script>  
-    </body>
+            </div>
+        </form>
+    </div>
+    <!-- <label for="next page">Next Page:</label>
+    <br> -->
+     <!-- <a class="next" href="index.html">Click here</a> -->
+    <br>
+</main>
+</body>
 </html>
-
-
-
-

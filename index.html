@@ -1,77 +1,29 @@
 <!Doctype html>
-<!-- <html lang="en"> -->
 <head>
-    <title>Highest Score Cards</title>
-    <!-- <meta name="description" content="Our first page">
-    <meta name="keywords" content="Card Game"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draw A Card</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="main.css">
     <script src="index.js" defer></script>
-    <!-- <script src="main.js" defer></script> -->
+    <script src="main.js" defer></script>
 </head>
 <body>
     <main>
-        <h2>
-            Highest Card In the Deck/Counting with Cards
-        </h2>
+        
         <p class="greeting">
-            Welcome! Let's Play A Game....
+            Keep clicking for a new Card!
             <br>
             <br>
-        <label for="play cards">Play</label>
+        <label for="play cards">Always a freshly Shuffled Deck!</label>
         </p>
         <form>
-            <!-- <p class="pointCards"></p> -->
+            <p class="pointCards">
             <label for="usersName">Press Here To Draw A Card</label>
-            <!-- <input type="text" name="shuffle" class="userSearch" placeholder=""> -->
             <button id="buttonClick">Click Me!</button>
             <img id="cardImage">
         </form>
-        <section class="rules">
-        <h3>Rules</h3>
-        <div class="fadeIn">
-        <img src="https://freakonometrics.hypotheses.org/files/2013/04/cards-hasard-random-300x221.gif" alt="card spread" width="162" height="82" style="align-content: center;">
-        </div>
-        <ul>
-            <li>
-                If the first card you draw is higher then the second you draw then
-                <br>               
-                the card you draw goes in a drawn card pile and
-                you keep the first card.  
-                <br>
-                Draw from the deck until you draw a card from the deck that beats your hole card.
-            </li>
-            <li>
-                if the second card you draw is higher than the first card you draw,
-                <br>
-                 you must put the both cards back in the deck and reshuflle the deck.
-            <li>If your card is the same point value as the card you draw
-                <br>
-                 then that card goes to the drawn card pile and no points are earned, draw new card.</li>    
-            </li>
-           </ul>
-        </section>
-            <section class="points">
-            <h3>Points</h3>
-            <div class="fadeIn">
-            <img src="https://media.giphy.com/media/LutTfF9H4RV7RcfTlv/giphy.gif" alt="points scored" width="200" height="100" style="align-content: center;">
-            </div>
-            <ul>
-                <li>
-                    Every card that you draw that is less than your first card is 1 point.
-                </li>
-                <li>
-                    If your first card is higher than 5 consecutive cards each subsequent card that your card beats
-                    <br> 
-                    thereafter your points will be doubled by the amount of the card that your hole card beats.
-                </li>
-                
-            </ul>
-            </section>
-
-        
-     
+        <br>
+        <br>
+        <a class="next" href="main.html">Click here to see more!</a>
     </main>
-    
 </body>
 </html>
