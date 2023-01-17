@@ -2,6 +2,11 @@
 //Declaring variables for created elements to add to the DOM attributing classes to those elements.
 //deckShuffleCheck reports to the user on the DOm that the deck has been shuffled.
 //cardPicked tells the user what card they have drawn and tells them on the DOM.
+//The second api requests allows the users to draw cards one at a time and displays an image of the card along with text from the cardPicked varaible
+
+
+
+
 
 
 const BASE_URL = "https://deckofcardsapi.com/api/deck/zqnjxw7xktei/shuffle";
