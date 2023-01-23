@@ -3,6 +3,13 @@ Link to app:
 
 https://click-for-a-card.netlify.app/
 
+
+Video presentation: 
+
+https://us06web.zoom.us/rec/share/mLTiCbcrCB2sIKVEK_D820JqkCTWvb3QymNpkRP36Tgi5UWp60AmrWUwW0nJHGv6.SjNplyO8n5_XfDUf?startTime=1674506065000
+
+Passcode: 0@E1S0=E
+
 Overview and Setup:
 This webpage has two html pages that are linked index.html and main.hmtl. One js file and one css file.  In order to move form one page to the other you must use the hyperlink on the page which take you to the main.html page where ypou will see a small form on the screen. 
 

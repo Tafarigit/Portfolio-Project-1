@@ -1,10 +1,12 @@
-//Declaring variables for specific api calls. The first one produces a shuffled deck. Insead of a brand new deck.
+//Declaring variables for specific api calls. The first one produces a shuffled deck. Intsead of a brand new deck.
 //Declaring variables for created elements to add to the DOM attributing classes to those elements.
 //deckShuffleCheck reports to the user on the DOm that the deck has been shuffled.
 //cardPicked tells the user what card they have drawn and tells them on the DOM.
 //The second api requests allows the users to draw cards one at a time and displays an image of the card along with text from the cardPicked varaible
 
-
+/* Possible improvements and techniques to try out to enhance performance and achieve initial goals. 
+Add an eventListener that stores the drawn card into an input box on the page 
+and an eventListener that corresponds to another input that holds the points for the card. */
 
 
 
@@ -45,7 +47,7 @@ const image = document.querySelector("#cardImage")
 const cards = document.createElement("p")
 
 
-console.log("Drawn Cards: ", pointsCard.push())
+// console.log("Drawn Cards: ", pointsCard.push())
 btn.addEventListener("click", event => {
     event.preventDefault()
     fetch(BASETWO_URL)
@@ -53,7 +55,7 @@ btn.addEventListener("click", event => {
     .then((deck) => {
    
     image.src = deck.cards[0].image
-    pointsCard.push(Number(deck.cards[0].value))
+    // pointsCard.push(Number(deck.cards[0].value))
 
     shuffle(deck)
     form.append(image)
